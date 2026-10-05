@@ -1,0 +1,4 @@
+const path=require('node:path');
+const sharp=require('C:/Users/AHS/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+const svg='<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><rect width="128" height="128" rx="29" fill="#42644f"/><path d="M30 33h27a15 15 0 0 1 15 15v49H45a15 15 0 0 0-15 0z" fill="#edf2e1"/><path d="M72 48a15 15 0 0 1 15-15h15v64H87a15 15 0 0 0-15 0z" fill="#c9d7b8"/><path d="M42 50h15M42 61h15M42 72h11" stroke="#78936a" stroke-width="4" stroke-linecap="round"/><path d="m82 71 5 5 10-12" stroke="#527447" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+(async()=>{for(const size of [16,48,128])await sharp(Buffer.from(svg)).resize(size,size).png().toFile(path.join(__dirname,'../extension/icon'+size+'.png'));console.log('Icons built.');})();

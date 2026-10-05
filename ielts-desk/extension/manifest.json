@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "雅思复盘台",
+  "version": "0.1.0",
+  "description": "今日计划、每日复盘、剑雅成绩；自动同步选定的 ChatGPT 项目。",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "alarms", "unlimitedStorage"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [{"matches": ["https://chatgpt.com/*"], "js": ["content.js"], "run_at": "document_idle"}],
+  "action": {"default_title": "打开雅思复盘台"},
+  "options_page": "index.html",
+  "icons": {"16": "icon16.png", "48": "icon48.png", "128": "icon128.png"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"}
+}

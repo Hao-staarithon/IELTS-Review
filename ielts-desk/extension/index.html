@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>雅思复盘台</title><link rel="icon" href="icon48.png"><link rel="stylesheet" href="style.css"></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#today"><span class="brand-mark">雅</span><span>雅思复盘台<small>IELTS STUDY DESK</small></span></a>
+    <div class="workspace-label">我的备考空间</div>
+    <nav aria-label="主导航">
+      <a href="#today" data-nav="today"><span class="nav-icon">▦</span> 今日总览 <span class="nav-arrow">↗</span></a>
+      <a href="#review" data-nav="review"><span class="nav-icon">▤</span> 每日复盘</a>
+      <a href="#scores" data-nav="scores"><span class="nav-icon">▥</span> 剑雅成绩</a>
+      <a href="#settings" data-nav="settings"><span class="nav-icon">⇄</span> 同步与设置</a>
+    </nav>
+    <div class="sidebar-note"><span class="tiny-label">ONE DAY AT A TIME</span><p>计划可以调整，<br>进步值得记录。</p><div class="fine-line"></div><span id="countdown"></span><small id="exam-date"></small></div>
+    <div class="sidebar-foot"><span class="avatar">S</span><div>我的雅思项目<small>数据保存在此浏览器</small></div><span class="version">0.1</span></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div class="breadcrumb">学习空间 <span>/</span> <b id="crumb">今日总览</b></div><button class="sync-pill" id="sync-pill" title="查看同步状态"><span id="sync-dot" class="dot"></span><span id="sync-text">等待连接</span></button></header>
+    <main id="main" tabindex="-1"></main>
+    <footer>为真实的学习进度留一份记录。<span>雅思复盘台 · 本地版</span></footer>
+  </div>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="core.js"></script><script src="app.js"></script>
+</body></html>
