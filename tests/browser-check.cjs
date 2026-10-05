@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),http=require('node:http');
 const runtime='C:/Users/AHS/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
 const {chromium}=require(path.join(runtime,'playwright'));
-const root=path.resolve(__dirname,'..'),output=path.resolve(root,'../ielts-qa');fs.mkdirSync(output,{recursive:true});
+const root=path.resolve(__dirname,'..'),output=path.resolve(root,'ielts-qa');fs.mkdirSync(output,{recursive:true});
 (async()=>{
   const server=http.createServer((req,res)=>{const rel=decodeURIComponent(new URL(req.url,'http://localhost').pathname);const file=path.resolve(root,'.'+rel);if(!file.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}fs.readFile(file,(e,buf)=>{if(e){res.writeHead(404);res.end();return;}const mime={'.js':'text/javascript','.css':'text/css','.html':'text/html','.png':'image/png'}[path.extname(file)]||'text/plain';res.setHeader('Content-Type',mime+'; charset=utf-8');res.end(buf);});});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));
